@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LoadFiles
@@ -44,7 +38,6 @@ namespace LoadFiles
         {
             if (lbxFiles.SelectedIndex != -1)
             {
-                string selectedFileName = lbxFiles.SelectedItem.ToString();
                 FileData selectedFile = (FileData)lbxFiles.SelectedItem;
 
                 // Update the content of the selected file
