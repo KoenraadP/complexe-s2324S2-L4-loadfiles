@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,14 +8,19 @@ using System.Threading.Tasks;
 namespace LoadFiles
 {
     internal class FileData
-    {
-        public string FileName { get; set; }
+    {       
+        public string FullPath { get; set; }
         public string FileContent { get; set; }
 
-        public FileData(string fileName, string fileContent)
+        public FileData(string fullPath, string fileContent)
         {
-            FileName = fileName;
+            FullPath = fullPath;
             FileContent = fileContent;
+        }
+
+        public override string ToString()
+        {
+            return Path.GetFileNameWithoutExtension(FullPath);
         }
     }
 }

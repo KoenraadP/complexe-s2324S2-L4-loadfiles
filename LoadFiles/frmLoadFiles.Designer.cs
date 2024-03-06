@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.lbxFiles = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtContent = new System.Windows.Forms.TextBox();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // lbxFiles
@@ -41,14 +42,15 @@
             this.lbxFiles.Name = "lbxFiles";
             this.lbxFiles.Size = new System.Drawing.Size(120, 407);
             this.lbxFiles.TabIndex = 0;
+            this.lbxFiles.SelectedIndexChanged += new System.EventHandler(this.lbxFiles_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtContent
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 13);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(329, 407);
-            this.textBox1.TabIndex = 1;
+            this.txtContent.Location = new System.Drawing.Point(140, 13);
+            this.txtContent.Multiline = true;
+            this.txtContent.Name = "txtContent";
+            this.txtContent.Size = new System.Drawing.Size(329, 407);
+            this.txtContent.TabIndex = 1;
             // 
             // btnOpen
             // 
@@ -58,6 +60,7 @@
             this.btnOpen.TabIndex = 2;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSave
             // 
@@ -67,6 +70,12 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Bewaren";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // ofd
+            // 
+            this.ofd.FileName = "openFileDialog1";
+            this.ofd.FileOk += new System.ComponentModel.CancelEventHandler(this.ofd_FileOk);
             // 
             // frmLoadFiles
             // 
@@ -75,7 +84,7 @@
             this.ClientSize = new System.Drawing.Size(481, 478);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOpen);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtContent);
             this.Controls.Add(this.lbxFiles);
             this.Name = "frmLoadFiles";
             this.Text = "LoadFiles";
@@ -87,9 +96,10 @@
         #endregion
 
         private System.Windows.Forms.ListBox lbxFiles;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.OpenFileDialog ofd;
     }
 }
 
