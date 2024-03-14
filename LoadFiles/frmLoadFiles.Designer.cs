@@ -33,6 +33,8 @@
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.btnSaveAs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbxFiles
@@ -66,7 +68,7 @@
             // 
             this.btnSave.Location = new System.Drawing.Point(139, 426);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(330, 40);
+            this.btnSave.Size = new System.Drawing.Size(164, 40);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Bewaren";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -75,13 +77,30 @@
             // ofd
             // 
             this.ofd.FileName = "openFileDialog1";
+            this.ofd.Filter = "tekstbestanden|*.txt";
             this.ofd.FileOk += new System.ComponentModel.CancelEventHandler(this.ofd_FileOk);
+            // 
+            // sfd
+            // 
+            this.sfd.Filter = "tekstbestanden|*.txt";
+            this.sfd.FileOk += new System.ComponentModel.CancelEventHandler(this.sfd_FileOk);
+            // 
+            // btnSaveAs
+            // 
+            this.btnSaveAs.Location = new System.Drawing.Point(305, 426);
+            this.btnSaveAs.Name = "btnSaveAs";
+            this.btnSaveAs.Size = new System.Drawing.Size(164, 40);
+            this.btnSaveAs.TabIndex = 4;
+            this.btnSaveAs.Text = "Bewaar als";
+            this.btnSaveAs.UseVisualStyleBackColor = true;
+            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
             // 
             // frmLoadFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 478);
+            this.Controls.Add(this.btnSaveAs);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.txtContent);
@@ -100,6 +119,8 @@
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.OpenFileDialog ofd;
+        private System.Windows.Forms.SaveFileDialog sfd;
+        private System.Windows.Forms.Button btnSaveAs;
     }
 }
 
